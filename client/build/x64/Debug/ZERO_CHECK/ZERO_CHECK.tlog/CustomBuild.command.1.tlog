@@ -1,0 +1,10 @@
+^C:\USERS\GNUNO\DOCUMENTS\BRAINHACKGITHUB\CLIENT\BUILD\CMAKEFILES\04178C4962599E056D27D83619BC5CE4\GENERATE.STAMP.RULE
+setlocal
+C:\mingw64\bin\cmake.exe -SC:/Users/gnuno/Documents/BrainHackGitHub/client -BC:/Users/gnuno/Documents/BrainHackGitHub/client/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/gnuno/Documents/BrainHackGitHub/client/build/data.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
