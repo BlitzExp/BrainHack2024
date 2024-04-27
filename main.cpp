@@ -58,7 +58,16 @@ int main()
             }
         }
         camera_zoom += (target_zoom - camera_zoom) * CAMERA_SPEED * 2;
-        //std::cout<<camera_zoom<<"\n";
+        //temporary_code
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+            chill.set_spdx(3);
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+            chill.set_spdx(-3);
+        }
+
+        chill.xy_plus_spd(0);
+        chill.xy_plus_spd(1);
+
         window.clear();
         window.draw(chill.draw());
 
