@@ -1,0 +1,82 @@
+#ifndef structure
+#define structure
+
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <string>
+#include <tuple>
+#include <list>
+
+extern int camera_x;
+extern int camera_y;
+extern float camera_zoom;
+extern int SCREEN_WIDTH;
+extern int SCREEN_HEIGHT;
+
+class object{
+public:
+    explicit object(double x, double y, std::string texture,
+     int spritesheet_grid_lenght, int spritesheet_grid_height);
+
+    virtual sf::Sprite draw(float parallax = 1);
+    void xy_plus_spd(int vertical_or_horizontal);
+    void resize(double res_x = 1, double res_y = 1);
+    virtual void receive_input(sf::Event event);
+    double get_x();
+    double get_y();
+    double get_spdx();
+    double get_spdy();
+    int get_direction();
+    int get_x_plus_diff_x();
+    sf::Sprite get_sprite();
+    void set_spritesheet_coords();
+    void set_direction(int direction);
+    void set_x(int x);
+    void set_y(int y);
+    void set_spdx(double spdx);
+    void set_spdy(double spdy);
+    void set_diff_x(int diff_x);
+    void set_diff_y(int diff_y);
+    double get_frame_x();
+    void set_frame_x(double frame_x);
+    void set_rotation(float rotation);
+
+    int _sprite_lenght;
+    int _sprite_height;
+
+protected:
+    double _spdx = 0;
+    double _spdy = 0;
+    double _extra_spdx = 0;
+    double _extra_spdy = 0;
+    double _conserved_spdy = 0;
+    double _conserved_spdx = 0;
+    double _slipperiness = 0.82;
+    double _SPD_CONSTANT = 1;
+    double _frame_x = 0;
+    double _squish = 1;
+    double _x = 0;
+    double _y = 0;
+    int _last_frame_x = 0;
+    int _last_frame_y = 0;
+    int _frame_count;
+    int _spritesheet_grid_lenght;
+    int _spritesheet_grid_height;
+    sf::Sprite _player_sprite;
+    sf::Texture _player_spritesheet;
+    sf::SoundBuffer buffer;
+    sf::Sound sound;
+    sf::IntRect _spritesheet_coords;
+    int _direction = 1;
+    std::string _state = "";
+    int _SCREEN_WIDTH = SCREEN_WIDTH;
+    int _SCREEN_HEIGHT = SCREEN_HEIGHT;
+    float _rotation = 0;
+    int _diff_x = 0;
+    int _diff_y = 0;
+    sf::Keyboard::Key _jump_key = sf::Keyboard::Z;
+    sf::Keyboard::Key _shooting_key = sf::Keyboard::LShift;
+
+};
+
+#endif
