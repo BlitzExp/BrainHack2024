@@ -5,6 +5,9 @@
 #include <chrono>
 #include <string>
 #include <json/json.h> // Asegúrate de tener la biblioteca jsoncpp instalada
+#include "variable.h"
+
+std::string mensaje;
 
 // Función callback para escribir los datos recibidos en un string
 size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* buffer) {
@@ -60,6 +63,8 @@ int main(void) {
                 if (root.isMember("message")) {
                     std::string message = root["message"].asString();
                     std::cout << "Mensaje recibido del servidor: " << message << std::endl;
+                    mensaje=message;
+                    std::cout<<mensaje;
                 } else {
                     std::cerr << "El JSON recibido no contiene el campo 'message'." << std::endl;
                 }
@@ -70,7 +75,7 @@ int main(void) {
         curl_easy_cleanup(curl);
 
         // Esperar un tiempo antes de realizar la próxima solicitud
-        std::this_thread::sleep_for(std::chrono::seconds(5));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 
     // No se llegará aquí, pero se limpia CURL globalmente

@@ -1,7 +1,15 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
+
+#include "variable.h"
+
+std::string mensaje;
 
 int main()
 {
+    while(1){
+        std::cout << mensaje;
+    }
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
