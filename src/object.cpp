@@ -1,8 +1,7 @@
 #include "../include/structure.hpp"
 
 object::object(double x, double y, std::string texture, 
- int spritesheet_grid_lenght, int spritesheet_grid_height)
-:_x(x), _y(y), _spritesheet_grid_lenght(spritesheet_grid_lenght), _spritesheet_grid_height(spritesheet_grid_height){
+ int spritesheet_grid_lenght, int spritesheet_grid_height){
     _player_spritesheet.loadFromFile(texture);
     sound.setBuffer(buffer);
     _player_sprite.setTexture(_player_spritesheet);

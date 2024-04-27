@@ -82,7 +82,7 @@ protected:
 
 class has_collisions: public object{
 public:
-    has_collisions(double x, double y, std::string texture, int player_length, int plater_height,
+    explicit has_collisions(double x, double y, std::string texture, int player_length, int plater_height,
      int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions*>& vector_of_colliders);
     has_collisions* collision_check(std::vector<has_collisions*>& vector_of_colliders);
     void collisions(std::vector<has_collisions*>& vector_of_colliders, bool vertical_or_horizontal);
@@ -90,6 +90,15 @@ public:
 
 protected:
     int _direction_last_collision = 1;
+};
+
+class pendulum: public has_collisions{
+public:
+    explicit pendulum(double x, double y, std::string texture, int player_length, int plater_height,
+     int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions*>& vector_of_colliders);
+    void pendulum_physics();
+protected:
+
 };
 
 #endif
