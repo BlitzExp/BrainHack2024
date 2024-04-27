@@ -1,0 +1,3 @@
+C:/Users/gnuno/Documents/Brain_io_hackathon/client/build/CMakeFiles/test.dir
+C:/Users/gnuno/Documents/Brain_io_hackathon/client/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/gnuno/Documents/Brain_io_hackathon/client/build/CMakeFiles/ZERO_CHECK.dir
