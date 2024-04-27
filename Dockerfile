@@ -3,8 +3,7 @@ FROM ubuntu:latest
 
 
 #The necessary installations
-RUN apt-get update && \ 
-    apt-get upgrade -y &&\
+RUN apt-get update && \
     apt install -y g++ - &&\
     apt-get install -y libsfml-dev &&\
     apt-get install -y x11-apps
