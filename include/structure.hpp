@@ -26,6 +26,8 @@ public:
     double get_y();
     double get_spdx();
     double get_spdy();
+    int get_length();
+    int get_height();
     int get_direction();
     int get_x_plus_diff_x();
     sf::Sprite get_sprite();
@@ -40,9 +42,6 @@ public:
     double get_frame_x();
     void set_frame_x(double frame_x);
     void set_rotation(float rotation);
-
-    int _sprite_lenght;
-    int _sprite_height;
 
 protected:
     double _length = 0;
@@ -84,8 +83,10 @@ protected:
 class has_collisions: public object{
 public:
     has_collisions(double x, double y, std::string texture, int player_length, int plater_height,
-     int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions>& vector_of_colliders);
-    bool collision_check();
+     int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions*>& vector_of_colliders);
+    has_collisions* collision_check(std::vector<has_collisions*>& vector_of_colliders);
+    void collisions(std::vector<has_collisions*>& vector_of_colliders, bool vertical_or_horizontal);
+    
 
 protected:
     int _direction_last_collision = 1;

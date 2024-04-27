@@ -20,10 +20,11 @@ int main()
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "SFML Application");
     window.setFramerateLimit(60);
     
-    std::vector<has_collisions> vector_of_colliders;
+    std::vector<has_collisions*> vector_of_colliders;
 
     has_collisions chill(0, 0, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
     has_collisions chill2(100, 100, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
+    has_collisions chill3(200, 200, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
 
     int go_to_camera_x = 0;
     int go_to_camera_y = 0;
@@ -50,7 +51,7 @@ int main()
             if (event.type == sf::Event::KeyPressed){
                 
                 if (event.key.code == sf::Keyboard::W){
-                    target_zoom += 1; //toggle if collision grids are visible or not
+                    target_zoom += 1;
                 } else if (event.key.code == sf::Keyboard::S){
                     target_zoom -= 1;
 
@@ -61,7 +62,13 @@ int main()
 
             }
         }
-        camera_zoom += (target_zoom - camera_zoom) * CAMERA_SPEED * 2;
+        go_to_camera_x = chill.get_x() / 5 - SCREEN_WIDTH / 2;
+        go_to_camera_y = chill.get_y() / 5 - SCREEN_HEIGHT / 2;
+        camera_x_no_zoom += (int) (go_to_camera_x - camera_x_no_zoom) * CAMERA_SPEED;
+        camera_y_no_zoom += (int) (go_to_camera_y - camera_y_no_zoom) * CAMERA_SPEED * 0.5;
+        camera_zoom += (target_zoom - camera_zoom) * 0.01;
+        camera_x = camera_x_no_zoom + (camera_zoom - 1) * chill.get_x();
+        camera_y = camera_y_no_zoom + (camera_zoom - 1) * chill.get_y();
         //temporary_code
         chill.set_spdx(chill.get_spdx()*0.9);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
@@ -76,14 +83,17 @@ int main()
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
             chill.set_spdy(5);
         }
-        ////////
 
-        chill.xy_plus_spd(0);
-        chill.xy_plus_spd(1);
+        for (int i = 0; i < 2; i++){
+            chill.xy_plus_spd(i);
+            chill.collisions(vector_of_colliders, i);
+        }
+        ////////
 
         window.clear();
         window.draw(chill.draw());
         window.draw(chill2.draw());
+        window.draw(chill3.draw());
 
         window.display(); //end of drawing events
     }

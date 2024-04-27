@@ -9,6 +9,7 @@ object::object(double x, double y, std::string texture,
     _player_sprite.setScale(1, 1);
     _length = spritesheet_grid_lenght;
     _height = spritesheet_grid_height;
+
 }
 
 void object::receive_input(sf::Event event){
@@ -37,6 +38,14 @@ double object::get_spdx(){
 
 double object::get_spdy(){
     return _spdy;
+}
+
+int object::get_length(){
+    return _length;
+}
+
+int object::get_height(){
+    return _height;
 }
 
 sf::Sprite object::get_sprite(){
