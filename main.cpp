@@ -44,13 +44,22 @@ int main()
                 window.close();
 
             if (event.type == sf::Event::KeyPressed){
-                if (event.key.code == sf::Keyboard::C){
-                    
+                
+                if (event.key.code == sf::Keyboard::W){
+                    target_zoom += 1; //toggle if collision grids are visible or not
+                } else if (event.key.code == sf::Keyboard::S){
+                    target_zoom -= 1;
+
+                    if(target_zoom == 0){
+                        target_zoom += 1;
+                    }
                 }
 
             }
         }
-
+        camera_zoom += (target_zoom - camera_zoom) * CAMERA_SPEED * 2;
+        //std::cout<<camera_zoom<<"\n";
+        window.clear();
         window.draw(chill.draw());
 
         window.display(); //end of drawing events

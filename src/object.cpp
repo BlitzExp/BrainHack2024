@@ -106,8 +106,7 @@ sf::Sprite object::draw(float parallax){
     int sum_due_to_parallax_x = ((-2 + _SCREEN_WIDTH * (-1 + parallax)) / (2 * parallax) + 1);
     int sum_due_to_parallax_y = ((-2 + _SCREEN_HEIGHT * (-1 + parallax)) / (2 * parallax) + 1);
     _player_sprite.setPosition(x_with_diff + sum_due_to_squish - (camera_x/parallax) + sum_due_to_zoom_x + sum_due_to_parallax_x, y_with_diff - (camera_y / parallax) + sum_due_to_zoom_y + sum_due_to_parallax_y);
-    //_player_sprite.setScale(camera_zoom * _squish, camera_zoom);
-    _player_sprite.setScale(1,1);
+    _player_sprite.setScale(camera_zoom * _squish, camera_zoom);
 
     set_spritesheet_coords();
     _player_sprite.setRotation(_rotation);
