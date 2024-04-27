@@ -96,7 +96,7 @@ class pendulum: public has_collisions{
 public:
     explicit pendulum(double x, double y, std::string texture, int player_length, int plater_height,
      int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions*>& vector_of_colliders);
-    void pendulum_physics(bool vertical_or_horiizontal);
+    void pendulum_physics(bool vertical_or_horiizontal, std::vector<has_collisions*>& vector_of_colliders);
     int get_center_x();
     int get_center_y();
 protected:
@@ -119,6 +119,8 @@ protected:
     int _extra_y;
     int _go_to_center_x = 0;
     int _go_to_center_y = 0;
+    int _last_center_x = 0;
+    int _last_center_y = 0;
 
 };
 

@@ -72,7 +72,7 @@ int main()
         camera_x = camera_x_no_zoom + (camera_zoom - 1) * chill.get_x();
         camera_y = camera_y_no_zoom + (camera_zoom - 1) * chill.get_y();
 
-        //temporary_code
+        // //temporary_code
         // chill.set_spdx(chill.get_spdx()*0.9);
         // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
         //     chill.set_spdx(-5);
@@ -86,14 +86,13 @@ int main()
         // } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
         //     chill.set_spdy(5);
         // }
+
         for (int i = 0; i < 2; i++){
             //chill.xy_plus_spd(i);
-            chill.pendulum_physics(i);
+            chill.pendulum_physics(i, vector_of_colliders);
             chill.collisions(vector_of_colliders, i);
         }
         ////////
-        //std::cout << chill.collision_check(vector_of_colliders) << "\n";
-        std::cout << chill.get_x() << "\n";
 
         window.clear();
         int x1 = chill.get_x() + chill.get_length()/2;
