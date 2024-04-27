@@ -1,0 +1,10 @@
+^C:\USERS\GNUNO\DOCUMENTS\BRAIN_IO_HACKATHON\CLIENT\CMAKELISTS.TXT
+setlocal
+C:\mingw64\bin\cmake.exe -SC:/Users/gnuno/Documents/Brain_io_hackathon/client -BC:/Users/gnuno/Documents/Brain_io_hackathon/client/build --check-stamp-file C:/Users/gnuno/Documents/Brain_io_hackathon/client/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
