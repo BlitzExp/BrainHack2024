@@ -7,6 +7,7 @@
 #include "src/object.cpp"
 #include "src/has_collisions.cpp"
 #include "src/pendulum.cpp"
+#include "src/elements.cpp"
 
 int camera_x = 0;
 int camera_y = 0;
@@ -23,9 +24,13 @@ int main()
     
     std::vector<has_collisions*> vector_of_colliders;
 
+    elements one(0, 0, "textures/chill.png",100, 100, 100,100, vector_of_colliders,20,true);
     pendulum chill(0, 0, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
     has_collisions chill2(100, 100, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
     has_collisions chill3(200, 200, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
+
+    std::cout<<one.getchangetemperature();
+    std::cout<<one.getwater();
 
     int go_to_camera_x = 0;
     int go_to_camera_y = 0;
@@ -64,6 +69,7 @@ int main()
             }
         }
 
+        one.movewater();
         go_to_camera_x = chill.get_x() / 5 - SCREEN_WIDTH / 2;
         go_to_camera_y = chill.get_y() / 5 - SCREEN_HEIGHT / 2;
         camera_x_no_zoom += (int) (go_to_camera_x - camera_x_no_zoom) * CAMERA_SPEED;
@@ -71,7 +77,6 @@ int main()
         camera_zoom += (target_zoom - camera_zoom) * 0.1;
         camera_x = camera_x_no_zoom + (camera_zoom - 1) * chill.get_x();
         camera_y = camera_y_no_zoom + (camera_zoom - 1) * chill.get_y();
-
         //temporary_code
         // chill.set_spdx(chill.get_spdx()*0.9);
         // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
@@ -93,8 +98,8 @@ int main()
         }
         ////////
         //std::cout << chill.collision_check(vector_of_colliders) << "\n";
-        std::cout << chill.get_x() << "\n";
-
+        //std::cout << chill.get_x() << "\n";
+         std::cout<<one.get_y() <<"\n";
         window.clear();
         int x1 = chill.get_x() + chill.get_length()/2;
         int x2 = chill.get_center_x() + chill.get_length()/2;
@@ -105,6 +110,7 @@ int main()
         };
         window.draw(line, 2, sf::Lines);
         
+        window.draw(one.draw());
         window.draw(chill.draw());
         window.draw(chill2.draw());
         window.draw(chill3.draw());

@@ -122,4 +122,22 @@ protected:
 
 };
 
+class elements: public has_collisions{
+public:
+    explicit elements(double x, double y, std::string texture, int player_length, int plater_height,
+     int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions*>& vector_of_colliders, int changetemperature, bool water);
+
+    void setchangetemperature(int changetemperature);
+    void setwater(bool water);
+
+    int getchangetemperature();
+    int getwater();
+
+    void movewater();
+
+protected:
+    bool _water=false;
+    int _changetemperature=0;
+};
+
 #endif
