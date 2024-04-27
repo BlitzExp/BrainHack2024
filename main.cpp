@@ -62,13 +62,15 @@ int main()
 
             }
         }
+
         go_to_camera_x = chill.get_x() / 5 - SCREEN_WIDTH / 2;
         go_to_camera_y = chill.get_y() / 5 - SCREEN_HEIGHT / 2;
         camera_x_no_zoom += (int) (go_to_camera_x - camera_x_no_zoom) * CAMERA_SPEED;
         camera_y_no_zoom += (int) (go_to_camera_y - camera_y_no_zoom) * CAMERA_SPEED * 0.5;
-        camera_zoom += (target_zoom - camera_zoom) * 0.01;
+        camera_zoom += (target_zoom - camera_zoom) * 0.1;
         camera_x = camera_x_no_zoom + (camera_zoom - 1) * chill.get_x();
         camera_y = camera_y_no_zoom + (camera_zoom - 1) * chill.get_y();
+
         //temporary_code
         chill.set_spdx(chill.get_spdx()*0.9);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
