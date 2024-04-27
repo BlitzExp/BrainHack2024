@@ -3,7 +3,7 @@ import time
 
 def consume_api(message):
     # URL de tu API
-    api_url = 'http://127.0.0.1:8080/receive_data'
+    api_url = 'http://10.43.44.106:8080//receive_data'
 
     # Datos para enviar a la API
     data = {'message': message}

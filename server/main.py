@@ -35,11 +35,11 @@ def send_message():
 
 def run_server():
     # Iniciar el servidor Flask
-    app.run(host='127.0.0.1', port=8080)
+    app.run(host='0.0.0.0', port=8080)
 
     # Crear un socket para escuchar las conexiones TCP
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('127.0.0.1', 8081))
+    server_socket.bind(('10.43.32.254', 8081))  # Usamos tu dirección IP aquí
     server_socket.listen(5)
 
     print("Servidor en ejecución. Esperando conexiones...")

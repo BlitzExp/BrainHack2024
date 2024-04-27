@@ -30,7 +30,7 @@ int main(void) {
         }
 
         // Configurar la URL del servidor Flask
-        std::string url = "http://127.0.0.1:8080/send_message";
+        std::string url = "http://10.43.44.106:8080//send_message";
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
         // Configurar el método GET
