@@ -1,0 +1,1 @@
+MSBuild.exe .\build\data.sln

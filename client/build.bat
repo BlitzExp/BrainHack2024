@@ -1,1 +1,0 @@
-MSBuild.exe .\build\test.sln

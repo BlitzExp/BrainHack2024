@@ -1,6 +1,6 @@
 ^C:\USERS\GNUNO\DOCUMENTS\BRAIN_IO_HACKATHON\CLIENT\BUILD\CMAKEFILES\38F80F494EA639B21B7A36B263F08EA7\GENERATE.STAMP.RULE
 setlocal
-C:\mingw64\bin\cmake.exe -SC:/Users/gnuno/Documents/Brain_io_hackathon/client -BC:/Users/gnuno/Documents/Brain_io_hackathon/client/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/gnuno/Documents/Brain_io_hackathon/client/build/test.sln
+C:\mingw64\bin\cmake.exe -SC:/Users/gnuno/Documents/Brain_io_hackathon/client -BC:/Users/gnuno/Documents/Brain_io_hackathon/client/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/gnuno/Documents/Brain_io_hackathon/client/build/data.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

@@ -173,9 +173,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\gnuno\Documents\Brain_io_hackathon\client\build\test.vcxproj">
-      <Project>{8ABCD221-49E4-37B1-B967-B707B3436CBB}</Project>
-      <Name>test</Name>
+    <ProjectReference Include="C:\Users\gnuno\Documents\Brain_io_hackathon\client\build\data.vcxproj">
+      <Project>{C9ECF3DF-ADE0-3B05-B811-57E217F65ABA}</Project>
+      <Name>data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

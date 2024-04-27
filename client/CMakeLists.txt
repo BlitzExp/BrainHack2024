@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.26.4)
 
 set(CMAKE_TOOLCHAIN_FILE "C:/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
-project(test)
+project(data)
 
-add_executable(test main.cpp)
+add_executable(data data.cpp)
 
 # Buscar y enlazar la biblioteca CURL
 find_package(CURL CONFIG REQUIRED)
