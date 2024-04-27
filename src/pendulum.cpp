@@ -51,7 +51,6 @@ void pendulum::pendulum_physics(bool vertical_or_horizontal, std::vector<has_col
             if(_last_frame_y < _y){
 
                 _y = _last_frame_y;
-                std::cout<<"ok"<<"\n";
             }
         }
     }
