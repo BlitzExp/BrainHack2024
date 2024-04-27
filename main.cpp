@@ -5,6 +5,7 @@
 #include <cmath>
 #include <fstream>
 #include "src/object.cpp"
+#include "src/has_collisions.cpp"
 
 int camera_x = 0;
 int camera_y = 0;
@@ -18,8 +19,11 @@ int main()
     //create window object
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "SFML Application");
     window.setFramerateLimit(60);
+    
+    std::vector<has_collisions> vector_of_colliders;
 
-    object chill(0, 0, "textures/chill.png", 50, 50);
+    has_collisions chill(0, 0, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
+    has_collisions chill2(100, 100, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
 
     int go_to_camera_x = 0;
     int go_to_camera_y = 0;
@@ -59,17 +63,27 @@ int main()
         }
         camera_zoom += (target_zoom - camera_zoom) * CAMERA_SPEED * 2;
         //temporary_code
+        chill.set_spdx(chill.get_spdx()*0.9);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-            chill.set_spdx(3);
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-            chill.set_spdx(-3);
+            chill.set_spdx(-5);
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+            chill.set_spdx(5);
         }
+
+        chill.set_spdy(chill.get_spdy()*0.9);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+            chill.set_spdy(-5);
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+            chill.set_spdy(5);
+        }
+        ////////
 
         chill.xy_plus_spd(0);
         chill.xy_plus_spd(1);
 
         window.clear();
         window.draw(chill.draw());
+        window.draw(chill2.draw());
 
         window.display(); //end of drawing events
     }

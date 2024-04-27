@@ -45,6 +45,8 @@ public:
     int _sprite_height;
 
 protected:
+    double _length = 0;
+    double _height = 0;
     double _spdx = 0;
     double _spdy = 0;
     double _extra_spdx = 0;
@@ -77,6 +79,16 @@ protected:
     sf::Keyboard::Key _jump_key = sf::Keyboard::Z;
     sf::Keyboard::Key _shooting_key = sf::Keyboard::LShift;
 
+};
+
+class has_collisions: public object{
+public:
+    has_collisions(double x, double y, std::string texture, int player_length, int plater_height,
+     int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions>& vector_of_colliders);
+    bool collision_check();
+
+protected:
+    int _direction_last_collision = 1;
 };
 
 #endif
