@@ -53,16 +53,16 @@ int pendulum::get_center_y(){
 }
 
 void pendulum::sum_x_y_pendulum( bool vertical_or_horizontal, std::vector<has_collisions*>& vector_of_colliders){
-    if (vertical_or_horizontal){
+    if (vertical_or_horizontal && frames > 60 && _alive){
         _spdx = (_x - _last_frame_x)/20;
         _x = _center_x + _added_x;
-        if(collision_check(vector_of_colliders) && frames > 1){
+        if(collision_check(vector_of_colliders)){
             _go_to_center_x = _last_center_x;
             _angular_velocity /= 2;
         }
     } else{
         _y = _center_y + _added_y;
-        if(collision_check(vector_of_colliders) && frames > 1){
+        if(collision_check(vector_of_colliders)){
             _go_to_center_y = _last_center_y;
             if(_last_frame_y < _y){
 
@@ -81,4 +81,14 @@ void pendulum::set_angular_speed(double vel){
 
 double pendulum::get_angular_speed(){
     return _angular_velocity;
+}
+
+void pendulum::isdead(double max){
+    if(abs(_angular_velocity) > max){
+        _alive = 0;
+        _x = 1000;
+        _y = 1000;
+        _center_x = 1000;
+        _center_y = 1000;
+    }
 }

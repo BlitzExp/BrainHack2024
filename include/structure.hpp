@@ -42,6 +42,7 @@ public:
     double get_frame_x();
     void set_frame_x(double frame_x);
     void set_rotation(float rotation);
+    bool _alive = 1;
 
 protected:
     double _length = 0;
@@ -102,6 +103,7 @@ public:
     virtual void sum_x_y_pendulum(bool vertical_or_horizontal, std::vector<has_collisions*>& vector_of_colliders);
     void set_angular_speed(double vel);
     double get_angular_speed();
+    void isdead(double max);
 protected:
     int _added_x_linear = 0;
     int _added_x = 0;
