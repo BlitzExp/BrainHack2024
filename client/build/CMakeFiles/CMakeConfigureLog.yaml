@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.9.8+b34f75857 for .NET Framework
-      Build started 27/04/2024 05:06:45 p. m..
+      Build started 27/04/2024 11:40:30 p. m..
       
       Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\3.26.4\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -62,7 +62,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:02.33
+      Time Elapsed 00:00:01.66
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -88,7 +88,7 @@ events:
       The output was:
       0
       MSBuild version 17.9.8+b34f75857 for .NET Framework
-      Build started 27/04/2024 05:06:48 p. m..
+      Build started 27/04/2024 11:40:32 p. m..
       
       Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\3.26.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -126,7 +126,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:02.02
+      Time Elapsed 00:00:01.44
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -145,8 +145,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-w32vrv"
-      binary: "C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-w32vrv"
+      source: "C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-vyb2se"
+      binary: "C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-vyb2se"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -158,32 +158,32 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-w32vrv
+        Change Dir: C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-vyb2se
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_8285a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.9.8+b34f75857 for .NET Framework
-        Build started 27/04/2024 05:06:51 p. m..
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_33d6e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.9.8+b34f75857 for .NET Framework
+        Build started 27/04/2024 11:40:34 p. m..
         
-        Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w32vrv\\cmTC_8285a.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vyb2se\\cmTC_33d6e.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_8285a.dir\\Debug\\".
+          Creating directory "cmTC_33d6e.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w32vrv\\Debug\\".
-          Creating directory "cmTC_8285a.dir\\Debug\\cmTC_8285a.tlog\\".
+          Creating directory "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vyb2se\\Debug\\".
+          Creating directory "cmTC_33d6e.dir\\Debug\\cmTC_33d6e.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_8285a.dir\\Debug\\cmTC_8285a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_8285a.dir\\Debug\\cmTC_8285a.tlog\\unsuccessfulbuild".
+          Creating "cmTC_33d6e.dir\\Debug\\cmTC_33d6e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_33d6e.dir\\Debug\\cmTC_33d6e.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8285a.dir\\Debug\\\\" /Fd"cmTC_8285a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\mingw64\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_33d6e.dir\\Debug\\\\" /Fd"cmTC_33d6e.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\mingw64\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8285a.dir\\Debug\\\\" /Fd"cmTC_8285a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\mingw64\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_33d6e.dir\\Debug\\\\" /Fd"cmTC_33d6e.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\mingw64\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w32vrv\\Debug\\cmTC_8285a.exe" /INCREMENTAL /ILK:"cmTC_8285a.dir\\Debug\\cmTC_8285a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-w32vrv/Debug/cmTC_8285a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-w32vrv/Debug/cmTC_8285a.lib" /MACHINE:X64  /machine:x64 cmTC_8285a.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_8285a.vcxproj -> C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w32vrv\\Debug\\cmTC_8285a.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vyb2se\\Debug\\cmTC_33d6e.exe" /INCREMENTAL /ILK:"cmTC_33d6e.dir\\Debug\\cmTC_33d6e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-vyb2se/Debug/cmTC_33d6e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-vyb2se/Debug/cmTC_33d6e.lib" /MACHINE:X64  /machine:x64 cmTC_33d6e.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_33d6e.vcxproj -> C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vyb2se\\Debug\\cmTC_33d6e.exe
         PostBuildEvent:
           setlocal
-          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-w32vrv/Debug/cmTC_8285a.exe -installedDir C:/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-vyb2se/Debug/cmTC_33d6e.exe -installedDir C:/vcpkg/installed/x64-windows/debug/bin -OutVariable out
           if %errorlevel% neq 0 goto :cmEnd
           :cmEnd
           endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -193,15 +193,15 @@ events:
           if %errorlevel% neq 0 goto :VCEnd
           :VCEnd
         FinalizeBuildStatus:
-          Deleting file "cmTC_8285a.dir\\Debug\\cmTC_8285a.tlog\\unsuccessfulbuild".
-          Touching "cmTC_8285a.dir\\Debug\\cmTC_8285a.tlog\\cmTC_8285a.lastbuildstate".
-        Done Building Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w32vrv\\cmTC_8285a.vcxproj" (default targets).
+          Deleting file "cmTC_33d6e.dir\\Debug\\cmTC_33d6e.tlog\\unsuccessfulbuild".
+          Touching "cmTC_33d6e.dir\\Debug\\cmTC_33d6e.tlog\\cmTC_33d6e.lastbuildstate".
+        Done Building Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vyb2se\\cmTC_33d6e.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:02.40
+        Time Elapsed 00:00:01.32
         
       exitCode: 0
   -
@@ -213,8 +213,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-2t86fx"
-      binary: "C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-2t86fx"
+      source: "C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-mfncfq"
+      binary: "C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-mfncfq"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -226,32 +226,32 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-2t86fx
+        Change Dir: C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-mfncfq
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_3c8bc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.9.8+b34f75857 for .NET Framework
-        Build started 27/04/2024 05:06:55 p. m..
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_1e8a3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.9.8+b34f75857 for .NET Framework
+        Build started 27/04/2024 11:40:36 p. m..
         
-        Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2t86fx\\cmTC_3c8bc.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mfncfq\\cmTC_1e8a3.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_3c8bc.dir\\Debug\\".
+          Creating directory "cmTC_1e8a3.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2t86fx\\Debug\\".
-          Creating directory "cmTC_3c8bc.dir\\Debug\\cmTC_3c8bc.tlog\\".
+          Creating directory "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mfncfq\\Debug\\".
+          Creating directory "cmTC_1e8a3.dir\\Debug\\cmTC_1e8a3.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_3c8bc.dir\\Debug\\cmTC_3c8bc.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_3c8bc.dir\\Debug\\cmTC_3c8bc.tlog\\unsuccessfulbuild".
+          Creating "cmTC_1e8a3.dir\\Debug\\cmTC_1e8a3.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_1e8a3.dir\\Debug\\cmTC_1e8a3.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3c8bc.dir\\Debug\\\\" /Fd"cmTC_3c8bc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\mingw64\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1e8a3.dir\\Debug\\\\" /Fd"cmTC_1e8a3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\mingw64\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3c8bc.dir\\Debug\\\\" /Fd"cmTC_3c8bc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\mingw64\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1e8a3.dir\\Debug\\\\" /Fd"cmTC_1e8a3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\mingw64\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2t86fx\\Debug\\cmTC_3c8bc.exe" /INCREMENTAL /ILK:"cmTC_3c8bc.dir\\Debug\\cmTC_3c8bc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-2t86fx/Debug/cmTC_3c8bc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-2t86fx/Debug/cmTC_3c8bc.lib" /MACHINE:X64  /machine:x64 cmTC_3c8bc.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_3c8bc.vcxproj -> C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2t86fx\\Debug\\cmTC_3c8bc.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mfncfq\\Debug\\cmTC_1e8a3.exe" /INCREMENTAL /ILK:"cmTC_1e8a3.dir\\Debug\\cmTC_1e8a3.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-mfncfq/Debug/cmTC_1e8a3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-mfncfq/Debug/cmTC_1e8a3.lib" /MACHINE:X64  /machine:x64 cmTC_1e8a3.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_1e8a3.vcxproj -> C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mfncfq\\Debug\\cmTC_1e8a3.exe
         PostBuildEvent:
           setlocal
-          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-2t86fx/Debug/cmTC_3c8bc.exe -installedDir C:/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/gnuno/Documents/BrainHackGitHub/client/build/CMakeFiles/CMakeScratch/TryCompile-mfncfq/Debug/cmTC_1e8a3.exe -installedDir C:/vcpkg/installed/x64-windows/debug/bin -OutVariable out
           if %errorlevel% neq 0 goto :cmEnd
           :cmEnd
           endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -261,15 +261,15 @@ events:
           if %errorlevel% neq 0 goto :VCEnd
           :VCEnd
         FinalizeBuildStatus:
-          Deleting file "cmTC_3c8bc.dir\\Debug\\cmTC_3c8bc.tlog\\unsuccessfulbuild".
-          Touching "cmTC_3c8bc.dir\\Debug\\cmTC_3c8bc.tlog\\cmTC_3c8bc.lastbuildstate".
-        Done Building Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2t86fx\\cmTC_3c8bc.vcxproj" (default targets).
+          Deleting file "cmTC_1e8a3.dir\\Debug\\cmTC_1e8a3.tlog\\unsuccessfulbuild".
+          Touching "cmTC_1e8a3.dir\\Debug\\cmTC_1e8a3.tlog\\cmTC_1e8a3.lastbuildstate".
+        Done Building Project "C:\\Users\\gnuno\\Documents\\BrainHackGitHub\\client\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mfncfq\\cmTC_1e8a3.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:02.07
+        Time Elapsed 00:00:01.25
         
       exitCode: 0
 ...

@@ -18,6 +18,9 @@ def consume_api(message):
         print(response)
         print('Error al enviar el mensaje al servidor Flask')
 
+
+
+
 def main():
     # Bucle infinito para enviar mensajes al servidor
     while True:

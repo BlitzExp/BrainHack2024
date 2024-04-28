@@ -62,9 +62,7 @@ int main(void) {
                 // Verificar si existe el campo 'message' en el JSON
                 if (root.isMember("message")) {
                     std::string message = root["message"].asString();
-                    std::cout << "Mensaje recibido del servidor: " << message << std::endl;
-                    mensaje=message;
-                    std::cout<<mensaje;
+                    std::cout<< message << std::endl;
                 } else {
                     std::cerr << "El JSON recibido no contiene el campo 'message'." << std::endl;
                 }
