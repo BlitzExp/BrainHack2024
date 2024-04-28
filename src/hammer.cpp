@@ -18,8 +18,9 @@ void hammer::sum_x_y_pendulum(bool vertical_or_horizontal, std::vector<has_colli
     if(vertical_or_horizontal){
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) _go_to_center_x += 5;
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) _go_to_center_x -= 5;
-
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) _angular_velocity += 0.03;
+
+        _angular_velocity += _spdx/50;
 
     }else{
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) _go_to_center_y += 5;

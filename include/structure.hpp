@@ -100,6 +100,8 @@ public:
     int get_center_x();
     int get_center_y();
     virtual void sum_x_y_pendulum(bool vertical_or_horizontal, std::vector<has_collisions*>& vector_of_colliders);
+    void set_angular_speed(double vel);
+    double get_angular_speed();
 protected:
     int _added_x_linear = 0;
     int _added_x = 0;
