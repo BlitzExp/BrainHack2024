@@ -1,7 +1,8 @@
 #include "../include/structure.hpp"
 
 object::object(double x, double y, std::string texture, 
- int spritesheet_grid_lenght, int spritesheet_grid_height){
+ int spritesheet_grid_lenght, int spritesheet_grid_height):_spritesheet_grid_lenght(spritesheet_grid_lenght), 
+ _spritesheet_grid_height(spritesheet_grid_height), _x(x), _y(y){
     _player_spritesheet.loadFromFile(texture);
     sound.setBuffer(buffer);
     _player_sprite.setTexture(_player_spritesheet);
@@ -121,4 +122,13 @@ sf::Sprite object::draw(float parallax){
     _player_sprite.setRotation(_rotation);
     _player_sprite.setTextureRect(_spritesheet_coords);
     return _player_sprite;
+}
+
+void object::gravity(double strength){
+    _spdy += strength;
+    _y += _spdy;
+
+    if (_y > 1000){
+        _alive = 0;
+    }
 }

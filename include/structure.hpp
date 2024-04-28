@@ -22,6 +22,7 @@ public:
     void xy_plus_spd(int vertical_or_horizontal);
     void resize(double res_x = 1, double res_y = 1);
     virtual void receive_input(sf::Event event);
+    virtual void gravity(double strength);
     double get_x();
     double get_y();
     double get_spdx();
@@ -42,6 +43,8 @@ public:
     double get_frame_x();
     void set_frame_x(double frame_x);
     void set_rotation(float rotation);
+    bool _alive = 1;
+    bool _first_time_dead = 0;
 
 protected:
     double _length = 0;
@@ -96,7 +99,45 @@ class pendulum: public has_collisions{
 public:
     explicit pendulum(double x, double y, std::string texture, int player_length, int plater_height,
      int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions*>& vector_of_colliders);
-    void pendulum_physics();
+    void pendulum_physics(bool vertical_or_horiizontal, std::vector<has_collisions*>& vector_of_colliders);
+    int get_center_x();
+    int get_center_y();
+    virtual void sum_x_y_pendulum(bool vertical_or_horizontal, std::vector<has_collisions*>& vector_of_colliders);
+    void set_angular_speed(double vel);
+    double get_angular_speed();
+    void isdead(double max);
+    int _go_to_center_x = 0;
+    int _go_to_center_y = 0;
+protected:
+    int _added_x_linear = 0;
+    int _added_x = 0;
+    int _added_y = 0;
+    int _frames = 0;
+    int _time_retreat = 0;
+    double _punch_x = 0;
+    double _punch_y = 0;
+    double _punch_spd = 0;
+    double _angle = 1 + M_PI/4;
+    double _acceleration = 0;
+    double _angular_velocity = 0;
+    double _rope_length = 70;
+    double _center_x = 0;
+    double _center_y = 0;
+    double _follow_speed = 0.7;
+    int _extra_x;
+    int _extra_y;
+    int _last_center_x = 0;
+    int _last_center_y = 0;
+
+};
+
+class hammer: public pendulum{
+public:
+    explicit hammer(double x, double y, int player_length, int plater_height,
+     int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions*>& vector_of_colliders);
+    void set_differences();
+    void sum_x_y_pendulum(bool vertical_or_horizontal, std::vector<has_collisions *> &vector_of_colliders) override;
+
 protected:
 
 };

@@ -41,7 +41,6 @@ has_collisions* has_collisions::collision_check(std::vector<has_collisions*>& ve
 void has_collisions::collisions(std::vector<has_collisions*>& vector_of_colliders, bool vertical_or_horizontal){
     has_collisions* whom_collided = collision_check(vector_of_colliders);
     if(collision_check(vector_of_colliders)){
-        std::cout <<"hell yeah" <<"\n";
         if (vertical_or_horizontal){
             int left_collision2 = whom_collided -> get_x();
             int right_collision2 = left_collision2 + whom_collided -> get_length();
