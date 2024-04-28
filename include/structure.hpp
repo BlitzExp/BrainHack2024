@@ -99,6 +99,7 @@ public:
     void pendulum_physics(bool vertical_or_horiizontal, std::vector<has_collisions*>& vector_of_colliders);
     int get_center_x();
     int get_center_y();
+    virtual void sum_x_y_pendulum(bool vertical_or_horizontal, std::vector<has_collisions*>& vector_of_colliders);
 protected:
     int _added_x_linear = 0;
     int _added_x = 0;
@@ -108,7 +109,7 @@ protected:
     double _punch_x = 0;
     double _punch_y = 0;
     double _punch_spd = 0;
-    double _angle = 1 + M_PI/2;
+    double _angle = 1 + M_PI/4;
     double _acceleration = 0;
     double _angular_velocity = 0;
     double _rope_length = 70;
@@ -121,6 +122,17 @@ protected:
     int _go_to_center_y = 0;
     int _last_center_x = 0;
     int _last_center_y = 0;
+
+};
+
+class hammer: public pendulum{
+public:
+    explicit hammer(double x, double y, int player_length, int plater_height,
+     int spritesheet_grid_lenght, int spritesheet_grid_height, std::vector<has_collisions*>& vector_of_colliders);
+    void set_differences();
+    void sum_x_y_pendulum(bool vertical_or_horizontal, std::vector<has_collisions *> &vector_of_colliders) override;
+
+protected:
 
 };
 

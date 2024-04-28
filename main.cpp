@@ -7,6 +7,7 @@
 #include "src/object.cpp"
 #include "src/has_collisions.cpp"
 #include "src/pendulum.cpp"
+#include "src/hammer.cpp"
 
 int camera_x = 0;
 int camera_y = 0;
@@ -16,15 +17,14 @@ int SCREEN_HEIGHT = 720;
 
 int main()
 {   
-
     //create window object
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "SFML Application");
     window.setFramerateLimit(60);
     
     std::vector<has_collisions*> vector_of_colliders;
 
-    pendulum chill(0, 0, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
-    has_collisions chill2(100, 100, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
+    hammer chill(0, 0, 43, 20, 43, 52, vector_of_colliders);
+    pendulum chill2(100, 100, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
     has_collisions chill3(200, 200, "textures/chill.png", 50, 50, 50, 50, vector_of_colliders);
 
     int go_to_camera_x = 0;
@@ -90,23 +90,23 @@ int main()
         for (int i = 0; i < 2; i++){
             //chill.xy_plus_spd(i);
             chill.pendulum_physics(i, vector_of_colliders);
+            chill.sum_x_y_pendulum(i, vector_of_colliders);
             chill.collisions(vector_of_colliders, i);
+
+            chill2.pendulum_physics(i, vector_of_colliders);
+            chill2.sum_x_y_pendulum(i, vector_of_colliders);
+            chill2.collisions(vector_of_colliders, i);
         }
         ////////
+        chill.set_differences();
 
         window.clear();
-        int x1 = chill.get_x() + chill.get_length()/2;
-        int x2 = chill.get_center_x() + chill.get_length()/2;
-        sf::Vertex line[] =
-        {
-            sf::Vertex(sf::Vector2f(x1 + ((camera_zoom - 1))* x1 - camera_x, chill.get_y() + ((camera_zoom - 1))* chill.get_x() - camera_y)),
-            sf::Vertex(sf::Vector2f(x2 + ((camera_zoom - 1))* x2 - camera_x, chill.get_center_y() + ((camera_zoom - 1))* chill.get_center_y() - camera_y))
-        };
-        window.draw(line, 2, sf::Lines);
+        int x1 = chill.get_x_plus_diff_x();
+        int x2 = chill.get_center_x() + chill.get_x_plus_diff_x() - chill.get_x();
         
-        window.draw(chill.draw());
         window.draw(chill2.draw());
         window.draw(chill3.draw());
+        window.draw(chill.draw());
 
         window.display(); //end of drawing events
     }
