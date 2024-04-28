@@ -12,6 +12,8 @@ pendulum::pendulum(double x, double y, std::string texture, int l, int h,
     _diff_x = 24;
     _center_x = _x;
     _center_y = _y;
+    _go_to_center_x = _center_x;
+    _go_to_center_y = _center_y;
 }
 
 void pendulum::pendulum_physics(bool vertical_or_horizontal, std::vector<has_collisions*>& vector_of_colliders){
@@ -53,7 +55,7 @@ int pendulum::get_center_y(){
 }
 
 void pendulum::sum_x_y_pendulum( bool vertical_or_horizontal, std::vector<has_collisions*>& vector_of_colliders){
-    if (vertical_or_horizontal && frames > 60 && _alive){
+    if (vertical_or_horizontal && _alive){
         _spdx = (_x - _last_frame_x)/20;
         _x = _center_x + _added_x;
         if(collision_check(vector_of_colliders)){

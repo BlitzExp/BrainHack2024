@@ -29,8 +29,9 @@ int main()
     std::vector<has_collisions*> vector_of_colliders;
 
     object background (-200, -100 , "textures/bck.png", 500, 500);
-    hammer chill (50, 0, 35, 20, 43, 52, vector_of_colliders);
+    hammer chill (150, -50, 35, 20, 43, 52, vector_of_colliders);
     pendulum chill2(0, 0, "textures/botellin.png", 37, 44, 37, 44, vector_of_colliders);
+    //pendulum bigboy(0, 0, "textures/bigboy.png", 74, 88, 74, 88, vector_of_colliders);
 
     int go_to_camera_x = 0;
     int go_to_camera_y = 0;
@@ -44,6 +45,7 @@ int main()
     sf::SoundBuffer buffer;
 
     std::vector<object*> shard_vector;
+    std::vector<pendulum*> jars;
 
     sf::Font font;
     if (!font.loadFromFile("fonts/04B_30__.TTF"))
