@@ -22,6 +22,7 @@ public:
     void xy_plus_spd(int vertical_or_horizontal);
     void resize(double res_x = 1, double res_y = 1);
     virtual void receive_input(sf::Event event);
+    virtual void gravity(double strength);
     double get_x();
     double get_y();
     double get_spdx();
@@ -43,6 +44,7 @@ public:
     void set_frame_x(double frame_x);
     void set_rotation(float rotation);
     bool _alive = 1;
+    bool _first_time_dead = 0;
 
 protected:
     double _length = 0;

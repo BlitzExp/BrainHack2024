@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cmath>
 #include <fstream>
+#include <format>
+#include <sstream>
 #include "src/object.cpp"
 #include "src/has_collisions.cpp"
 #include "src/pendulum.cpp"
@@ -28,7 +30,7 @@ int main()
 
     object background (-200, -100 , "textures/bck.png", 500, 500);
     hammer chill (50, 0, 35, 20, 43, 52, vector_of_colliders);
-    pendulum chill2(300, 0, "textures/botellin.png", 37, 44, 37, 44, vector_of_colliders);
+    pendulum chill2(0, 0, "textures/botellin.png", 37, 44, 37, 44, vector_of_colliders);
 
     int go_to_camera_x = 0;
     int go_to_camera_y = 0;
@@ -40,6 +42,24 @@ int main()
     float target_zoom = 1;
 
     sf::SoundBuffer buffer;
+
+    std::vector<object*> shard_vector;
+
+    sf::Font font;
+    if (!font.loadFromFile("fonts/04B_30__.TTF"))
+    {
+        return -1;
+    }
+
+    // Create a text object
+    sf::Text text;
+
+    // Set the font of the text
+    text.setFont(font);
+    text.setString("???");
+    text.setCharacterSize(24);
+    text.setFillColor(sf::Color::Blue);
+    text.setPosition(50, 50);
 
 ////////////////////////////////////////////////////////////game_on///////////////////////
 
@@ -77,13 +97,35 @@ int main()
         camera_x = camera_x_no_zoom + (camera_zoom - 1);
         camera_y = camera_y_no_zoom + (camera_zoom - 1);
 
+
         for (int i = 0; i < 2; i++){
             chill.pendulum_physics(i, vector_of_colliders);
             if (chill.collision_check(vector_of_colliders)) {
                 has_collisions* colliding_with = chill.collision_check(vector_of_colliders);
                 pendulum* p_ref = reinterpret_cast<pendulum*>(colliding_with);
                 p_ref -> set_angular_speed((p_ref->get_angular_speed()/abs(p_ref->get_angular_speed()))*calcularVelocidadDespuesColision(chill, *p_ref ,100, 0.1));
-                if (p_ref -> get_angular_speed() > 0.25) p_ref -> _alive = 0, p_ref -> set_x(3000);
+                if (p_ref -> get_angular_speed() > 0.25){
+                    p_ref -> _alive = 0;
+                    p_ref -> set_x(3000);
+                    p_ref -> _first_time_dead = 1;
+                }
+
+                if (!(p_ref -> _alive) && p_ref -> _first_time_dead == 1){
+                    p_ref -> _first_time_dead = 0;
+
+                    
+                    for (int j = 0; j < 6; j++){
+                        // int x_pos = p_ref -> get_x() + (rand()% (p_ref -> get_length())) - (p_ref -> get_length()/2);
+                        // int y_pos = p_ref -> get_y() + (rand()% (p_ref -> get_height())) - (p_ref -> get_height()/2);
+                        int x_pos = 0 + (rand()% (p_ref -> get_length())) - (p_ref -> get_length()/2);
+                        int y_pos = 0 + (rand()% (p_ref -> get_height())) - (p_ref -> get_height()/2);
+                        shard_vector.push_back( new object(x_pos, y_pos, "textures/shattered.png", 18, 20));
+                        shard_vector[j] -> set_spdy(-(rand() % 5));
+                        shard_vector[j] -> set_spdx(rand() % 5);
+                        shard_vector[j] -> set_rotation(rand() % int(2*M_PI));
+
+                    }
+                }
             }
 
             chill.collisions(vector_of_colliders, i);
@@ -91,15 +133,39 @@ int main()
             chill2.pendulum_physics(i, vector_of_colliders);
             chill2.collisions(vector_of_colliders, i);
         }
+
+        for (int i = 0; i < shard_vector.size(); i++){
+            shard_vector[i] -> gravity(0.3);
+
+            if (!(shard_vector[i] -> _alive)){
+                delete shard_vector[i];
+                std::vector<object*>::iterator pos;
+                pos = shard_vector.begin() + i;
+                shard_vector.erase(pos);
+
+                if(shard_vector.size() == 0){
+                    LEVEL++;
+                }
+            }
+        }
         ////////
-        std::cout<< chill2.get_angular_speed() <<std::endl;
-        chill.set_differences();
+        chill.set_differences(); // DO NOT DELETE
 
         window.clear();
         
         window.draw(background.draw(2));
         window.draw(chill2.draw());
         window.draw(chill.draw());
+        window.draw(text);
+
+        for (auto i:shard_vector){
+            window.draw(i -> draw());
+        }
+
+        std::stringstream ss;
+        ss << "LEVEL: " << LEVEL;
+        std::string str = ss.str();
+        text.setString(str);
 
         window.display(); //end of drawing events
     }

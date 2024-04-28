@@ -82,13 +82,3 @@ void pendulum::set_angular_speed(double vel){
 double pendulum::get_angular_speed(){
     return _angular_velocity;
 }
-
-void pendulum::isdead(double max){
-    if(abs(_angular_velocity) > max){
-        _alive = 0;
-        _x = 1000;
-        _y = 1000;
-        _center_x = 1000;
-        _center_y = 1000;
-    }
-}

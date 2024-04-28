@@ -123,3 +123,12 @@ sf::Sprite object::draw(float parallax){
     _player_sprite.setTextureRect(_spritesheet_coords);
     return _player_sprite;
 }
+
+void object::gravity(double strength){
+    _spdy += strength;
+    _y += _spdy;
+
+    if (_y > 1000){
+        _alive = 0;
+    }
+}
