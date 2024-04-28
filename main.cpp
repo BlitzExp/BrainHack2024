@@ -28,9 +28,12 @@ int main()
     
     std::vector<has_collisions*> vector_of_colliders;
 
+    std::vector<pendulum*> jars;
+    jars.push_back(new pendulum (0, 0, "textures/botellin.png", 37, 44, 37, 44, vector_of_colliders));
+    jars.push_back(new pendulum (200, 200, "textures/bigboy.png", 74, 88, 74, 88, vector_of_colliders));
     object background (-200, -100 , "textures/bck.png", 500, 500);
     hammer chill (150, -50, 35, 20, 43, 52, vector_of_colliders);
-    pendulum chill2(0, 0, "textures/botellin.png", 37, 44, 37, 44, vector_of_colliders);
+    // pendulum chill2(0, 0, "textures/botellin.png", 37, 44, 37, 44, vector_of_colliders);
     //pendulum bigboy(0, 0, "textures/bigboy.png", 74, 88, 74, 88, vector_of_colliders);
 
     int go_to_camera_x = 0;
@@ -45,7 +48,6 @@ int main()
     sf::SoundBuffer buffer;
 
     std::vector<object*> shard_vector;
-    std::vector<pendulum*> jars;
 
     sf::Font font;
     if (!font.loadFromFile("fonts/04B_30__.TTF"))
@@ -106,7 +108,7 @@ int main()
                 has_collisions* colliding_with = chill.collision_check(vector_of_colliders);
                 pendulum* p_ref = reinterpret_cast<pendulum*>(colliding_with);
                 p_ref -> set_angular_speed((p_ref->get_angular_speed()/abs(p_ref->get_angular_speed()))*calcularVelocidadDespuesColision(chill, *p_ref ,100, 0.1));
-                if (p_ref -> get_angular_speed() > 0.25){
+                if (abs(p_ref -> get_angular_speed()) > (LEVEL - 1) * 0.4 + 0.35){
                     p_ref -> _alive = 0;
                     p_ref -> set_x(3000);
                     p_ref -> _first_time_dead = 1;
@@ -132,8 +134,8 @@ int main()
 
             chill.collisions(vector_of_colliders, i);
 
-            chill2.pendulum_physics(i, vector_of_colliders);
-            chill2.collisions(vector_of_colliders, i);
+            jars[LEVEL - 1] -> pendulum_physics(i, vector_of_colliders);
+            jars[LEVEL - 1] -> collisions(vector_of_colliders, i);
         }
 
         for (int i = 0; i < shard_vector.size(); i++){
@@ -147,6 +149,8 @@ int main()
 
                 if(shard_vector.size() == 0){
                     LEVEL++;
+                    jars[LEVEL - 1] -> _go_to_center_x = 0;
+                    jars[LEVEL - 1] -> _go_to_center_y = 0;
                 }
             }
         }
@@ -156,7 +160,7 @@ int main()
         window.clear();
         
         window.draw(background.draw(2));
-        window.draw(chill2.draw());
+        window.draw(jars[LEVEL - 1] -> draw());
         window.draw(chill.draw());
         window.draw(text);
 

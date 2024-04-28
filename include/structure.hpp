@@ -106,6 +106,8 @@ public:
     void set_angular_speed(double vel);
     double get_angular_speed();
     void isdead(double max);
+    int _go_to_center_x = 0;
+    int _go_to_center_y = 0;
 protected:
     int _added_x_linear = 0;
     int _added_x = 0;
@@ -124,8 +126,6 @@ protected:
     double _follow_speed = 0.7;
     int _extra_x;
     int _extra_y;
-    int _go_to_center_x = 0;
-    int _go_to_center_y = 0;
     int _last_center_x = 0;
     int _last_center_y = 0;
 
